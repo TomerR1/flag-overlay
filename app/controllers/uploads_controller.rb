@@ -12,7 +12,7 @@ class UploadsController < ApplicationController
         end
     end
     def show
-        @upload = Upload.find_by key: params[:key]
+        @upload = Upload.find_by key: params[:id]
     end
     private
         def upload_params
