@@ -1,20 +1,34 @@
-<div id="controls" style="text-align:center;">
-    <input type="range" min="0" max="1" step=".01" value="0.5" id="mix">
-    <div id="fit">Fit to picture</div>
-    <div id="flags">
-        <div id="flag1">FRENCH FLAG</div>
-        <div id="flag2">USA FLAG</div>
-        <div id="flag3">CANADA FLAG</div>
+<div class="container">
+    <div class="row">
+        <div class=".col-md-6 .col-md-offset-3">
+            <div id="controls" style="text-align:center;">
+                <input type="range" min="0" max="1" step=".01" value="0.5" id="mix">
+                <div id="fit">Fit to picture</div>
+                <div id="flags">
+                    <div id="flag1">FRENCH FLAG</div>
+                    <div id="flag2">USA FLAG</div>
+                    <div id="flag3">CANADA FLAG</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container">
-    <div id="overlay" style="margin:0px auto;">
-            <div id="img"><%= image_tag @upload.image.url %></div>
-            <div id="flag"><%= image_tag 'flags/fr.png' %></div>
+    <div class="row">
+        <div class=".col-md-6 .col-md-offset-3">
+            <div id="overlay" style="margin:0px auto;">
+                    <div id="img"><%= image_tag @upload.image.url %></div>
+                    <div id="flag"><%= image_tag 'flags/fr.png' %></div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container">
-    <div id="result" style="text-align:center;margin-top:30px;">
-        <canvas id="canvas2" style="margin:0px auto;"></canvas>
+    <div class="row">
+        <div class=".col-md-6 .col-md-offset-3">
+            <div id="result" style="text-align:center;margin-top:30px;">
+                <canvas id="canvas2" style="margin:0px auto;"></canvas>
+            </div>
+        </div>
     </div>
 </div>
