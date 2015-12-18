@@ -19,7 +19,7 @@
 
 $(document).ready(function () {
     $("#flag").css({
-      "width":$("#img").width() - 2
+      "width":$("#img img").width() - 2
     });
     $("#mix").change(function() {
         $("#img img").css("opacity", this.value);
@@ -28,6 +28,15 @@ $(document).ready(function () {
     $("#fit").click(function() {
         $("#flag").css({
             "width":$("#img img").width()
+        });
+    });
+    $("#go").click(function() {
+        html2canvas($("#flag"), {
+            allowTaint: true,
+            taintTest: true,
+            onrendered: function(canvas) {
+               $("#result").append(canvas);
+            }
         });
     });
     $("#flag").draggable({ containment: $("#img img") });
