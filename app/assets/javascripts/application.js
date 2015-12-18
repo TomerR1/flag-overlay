@@ -17,7 +17,7 @@
 //= require_tree .
 
 
-$(document).ready(function () {
+$(window).load(function () {
     $("#flag").css({
       "width":$("#img img").width(),
       "height":$("#img img").height()
