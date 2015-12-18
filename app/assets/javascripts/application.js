@@ -42,8 +42,12 @@ function updatePreview() {
                     var left = $('#flag').css( "left" ).replace(/[^-\d\.]/g, '');
                     var top = $('#flag').css( "top" ).replace(/[^-\d\.]/g, '');
                     context.drawImage(imageObj, left, top, $("#flag").width(), $("#flag").height(), 0, 0, $("#flag").width(), $("#flag").height());
+                    var dlLink = canvas2.toDataURL('image/png').replace(/^data:image\/png/, 'data:application/octet-stream');
+                    $("#dl").html("<a download='overlay.png' href='"+ dlLink + "' class='btn btn-default'>DOWNLOAD</a>");
                 };
                 imageObj.src = canvas.toDataURL();
+                
+                
             }
         });
         $("#flag").css({
@@ -100,6 +104,6 @@ $(window).load(function () {
     $("#flag2").bind('click', { param: 2 }, updateFlag);
     $("#flag3").bind('click', { param: 3 }, updateFlag);
     $("#flag").append( "<div id='helper-arrow'><-- Drag me to resize!</div>");
-    
+   
     updatePreview();
 });
