@@ -13,18 +13,18 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container editor" style="visibility: hidden;">
     <div class="row">
         <div class="col-md-12">
             <h3 style="text-align:center;">Edit your picture:</h3>
             <div id="overlay" style="margin:0px auto;">
                     <div id="img"><%= image_tag @upload.image.url %></div>
-                    <div id="flag"><%= image_tag 'flags/fr.png' %></div>
+                    <div id="flag"><%= image_tag '' %></div>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container preview" style="visibility: hidden;">
     <div class="row">
         <div class="col-md-12">
             <h3 style="text-align:center;">Preview your picture:</h3>

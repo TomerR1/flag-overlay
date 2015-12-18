@@ -46,6 +46,18 @@
     border: solid 1px black;
     background: #333;
     color: white;
+    display:none;
+}
+
+#flags-arrow {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    padding: 10px;
+    border: solid 1px black;
+    background: #333;
+    color: white;
+    display:none;
 }
 
 #result {

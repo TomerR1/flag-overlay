@@ -73,6 +73,7 @@ function updateFlag(event) {
 }
 
 $(window).load(function () {
+    var state = 0;
     $("#flag").css({
       "width":$("#img img").width() - 4,
       "height":$("#img img").height() - 4,
@@ -103,7 +104,23 @@ $(window).load(function () {
     $("#flag1").bind('click', { param: 1 }, updateFlag);
     $("#flag2").bind('click', { param: 2 }, updateFlag);
     $("#flag3").bind('click', { param: 3 }, updateFlag);
-    $("#flag").append( "<div id='helper-arrow'><-- Drag me to resize!</div>");
+    
+    $("#flag").append( "<div id='helper-arrow'><--Drag me to resize!</div>");
+    $("#flags button:last-child").append( "<div id='flags-arrow'><-- Choose your flag</div>");
+    $("#flags-arrow").delay(2000).fadeIn(500);
+    $("#flags button").click(function() {
+        if (state == 0) {
+            state = 1;
+            $("#helper-arrow").delay(2000).fadeIn(500);
+            $("#flags-arrow").fadeOut(500);
+            $(".editor, .preview").css({
+                "display":"none",
+                "visibility":"visible"
+            });
+            $(".editor, .preview").show();
+            updatePreview();
+        }
+    });
    
     updatePreview();
 });
