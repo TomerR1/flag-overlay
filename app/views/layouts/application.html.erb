@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FlagOverlay</title>
+  <title>Flag Overlay</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="container">
+  <div class="row">
+    <div class=".col-md-6 .col-md-offset-3" style="text-align:center;">
+      <div class="jumbotron">
+        <h1>Flag Overlay<span style="font-size:15px;vertical-align:bottom;">beta</span></h1>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= yield %>
 
