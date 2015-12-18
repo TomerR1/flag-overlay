@@ -19,8 +19,8 @@
 
 $(window).load(function () {
     $("#flag").css({
-      "width":$("#img img").width(),
-      "height":$("#img img").height()
+      "width":$("#img img").width() - 4,
+      "height":$("#img img").height() - 4,
     });
     $("#overlay").css({
       "width":$("#img img").width(),
@@ -34,11 +34,16 @@ $(window).load(function () {
         $("#flag").css({
             "left":0,
             "top":0,
-            "width":$("#img img").width(),
-            "height":$("#img img").height()
+            "width":$("#img img").width() - 4,
+            "height":$("#img img").height() - 4
         });
     });
     $("#go").click(function() {
+        $("#flag").css({
+            "border":"none",
+            "width":$("#flag").width() + 4,
+            "height":$("#flag").height() + 4
+        });
         html2canvas($("#overlay"), {
             allowTaint: true,
             taintTest: true,
@@ -55,12 +60,17 @@ $(window).load(function () {
                     context.clearRect(0, 0, canvas2.width, canvas2.height);
                     canvas2.width = $("#flag").width();
                     canvas2.height = $("#flag").height();
-                    var left = $('#flag').css( "left" ).replace(/[^-\d\.]/g, '');;
-                    var top = $('#flag').css( "top" ).replace(/[^-\d\.]/g, '');;
+                    var left = $('#flag').css( "left" ).replace(/[^-\d\.]/g, '');
+                    var top = $('#flag').css( "top" ).replace(/[^-\d\.]/g, '');
                     context.drawImage(imageObj, left, top, $("#flag").width(), $("#flag").height(), 0, 0, $("#flag").width(), $("#flag").height());
                 };
                 imageObj.src = canvas.toDataURL();
             }
+        });
+        $("#flag").css({
+            "border":"solid 2px black",
+            "width":$("#flag").width() - 4,
+            "height":$("#flag").height() - 4
         });
     });
     $("#flag").draggable({ containment: $("#img img") });
