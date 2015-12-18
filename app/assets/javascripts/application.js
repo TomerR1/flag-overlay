@@ -16,29 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-
-$(window).load(function () {
-    $("#flag").css({
-      "width":$("#img img").width() - 4,
-      "height":$("#img img").height() - 4,
-    });
-    $("#overlay").css({
-      "width":$("#img img").width(),
-      "height":$("#img img").height()
-    });
-    $("#mix").change(function() {
-        $("#img img").css("opacity", this.value);
-        $("#flag img").css("opacity", (1 -this.value));
-    });
-    $("#fit").click(function() {
-        $("#flag").css({
-            "left":0,
-            "top":0,
-            "width":$("#img img").width() - 4,
-            "height":$("#img img").height() - 4
-        });
-    });
-    $("#go").click(function() {
+function updatePreview() {
         $("#flag").css({
             "border":"none",
             "width":$("#flag").width() + 4,
@@ -72,7 +50,34 @@ $(window).load(function () {
             "width":$("#flag").width() - 4,
             "height":$("#flag").height() - 4
         });
+    };
+
+$(window).load(function () {
+    $("#flag").css({
+      "width":$("#img img").width() - 4,
+      "height":$("#img img").height() - 4,
     });
+    $("#overlay").css({
+      "width":$("#img img").width(),
+      "height":$("#img img").height()
+    });
+    $("#mix").change(function() {
+        $("#img img").css("opacity", this.value);
+        $("#flag img").css("opacity", (1 -this.value));
+    });
+    $("#fit").click(function() {
+        $("#flag").css({
+            "left":0,
+            "top":0,
+            "width":$("#img img").width() - 4,
+            "height":$("#img img").height() - 4
+        });
+    });
+    $("#go").click(updatePreview);
+    $("#flag").on("dragstop", updatePreview);
+    $("#flag").on("resizestop", updatePreview);
     $("#flag").draggable({ containment: $("#img img") });
     $("#flag").resizable({ containment: $("#img img"), handles: 'ne, se, sw, nw' });
+    updatePreview();
 });
+
