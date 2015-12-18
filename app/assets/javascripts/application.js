@@ -99,6 +99,7 @@ $(window).load(function () {
     $("#flag1").bind('click', { param: 1 }, updateFlag);
     $("#flag2").bind('click', { param: 2 }, updateFlag);
     $("#flag3").bind('click', { param: 3 }, updateFlag);
+    $("#flag").append( "<div id='helper-arrow'><-- Drag me to resize!</div>");
     
     updatePreview();
 });

@@ -37,3 +37,19 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     padding-bottom: 30px;
 }
+
+#helper-arrow {
+    position: absolute;
+    right: -170px;
+    bottom: -18px;
+    padding: 10px;
+    border: solid 1px black;
+    background: #333;
+    color: white;
+}
+
+#result {
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
