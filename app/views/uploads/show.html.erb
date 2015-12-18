@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class=".col-md-6 .col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3">
             <div id="controls">
                 <input type="range" min="0" max="1" step=".01" value="0.5" id="mix" style="width:30%;margin:0px auto;">
                <button type="button" class="btn btn-default" id="fit" style="margin-top:20px;">Fit to picture</button>
@@ -15,7 +15,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class=".col-md-6 .col-md-offset-3">
+        <div class="col-md-12">
             <h3 style="text-align:center;">Edit your picture:</h3>
             <div id="overlay" style="margin:0px auto;">
                     <div id="img"><%= image_tag @upload.image.url %></div>
@@ -26,7 +26,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class=".col-md-6 .col-md-offset-3">
+        <div class="col-md-12">
             <h3 style="text-align:center;">Preview your picture:</h3>
             <h5 style="text-align:center;">When you are finished, right click this image and hit 'Save As'</h5>
             <div id="result">

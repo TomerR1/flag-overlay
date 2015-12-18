@@ -1,8 +1,13 @@
-<h2>Ha</h2>
-
-<%= form_for @upload, html: { multipart: true } do |f| %>
-      
-      <%= f.file_field :image %>
-      
-      <%= f.submit 'Submit' %>
-<% end %>
+<div class="container">
+      <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                  <h3 style="text-align:center;">Upload picture:</h3>
+                  <%= form_for @upload, html: { multipart: true } do |f| %>
+                        
+                        <div class="form-group"><%= f.file_field :image, class:'form-control' %></div>
+                        
+                        <div style="text-align:center;"><%= f.submit 'Upload!', class:'btn btn-default' %></div>
+                  <% end %>
+            </div>
+      </div>
+</div>
