@@ -72,6 +72,7 @@ $(window).load(function () {
             "width":$("#img img").width() - 4,
             "height":$("#img img").height() - 4
         });
+        updatePreview();
     });
     $("#go").click(updatePreview);
     $("#flag").on("dragstop", updatePreview);
