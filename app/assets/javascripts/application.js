@@ -52,6 +52,21 @@ function updatePreview() {
         });
     };
 
+function updateFlag(event) {
+    switch (event.data.param) {
+        case 1:
+            $("#flag img").attr("src","/images/flags/fr.png");
+            break;
+        case 2:
+            $("#flag img").attr("src","/images/flags/us.png")
+            break;
+        case 3:
+            $("#flag img").attr("src","/images/flags/cn.png")
+            break;
+    }
+    updatePreview();
+}
+
 $(window).load(function () {
     $("#flag").css({
       "width":$("#img img").width() - 4,
@@ -79,6 +94,9 @@ $(window).load(function () {
     $("#flag").on("resizestop", updatePreview);
     $("#flag").draggable({ containment: $("#img img") });
     $("#flag").resizable({ containment: $("#img img"), handles: 'ne, se, sw, nw' });
+    $("#flag1").bind('click', { param: 1 }, updateFlag);
+    $("#flag2").bind('click', { param: 2 }, updateFlag);
+    $("#flag3").bind('click', { param: 3 }, updateFlag);
+    
     updatePreview();
 });
-

@@ -1,6 +1,11 @@
 <input type="range" min="0" max="1" step=".01" value="0.5" id="mix"><%= link_to 'Overlay!', overlay_upload_path %>
 <div id="fit">Fit to picture</div>
 <div id="go">Go</div>
+<div id="flags">
+    <div id="flag1">FRENCH FLAG</div>
+    <div id="flag2">USA FLAG</div>
+    <div id="flag3">CANADA FLAG</div>
+</div>
     <div id="overlay">
             <div id="img"><%= image_tag @upload.image.url %></div>
             <div id="flag"><%= image_tag 'flags/fr.png' %></div>
