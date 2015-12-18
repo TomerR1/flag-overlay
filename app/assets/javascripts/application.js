@@ -106,7 +106,7 @@ $(window).load(function () {
     $("#flag3").bind('click', { param: 3 }, updateFlag);
     
     $("#flag").append( "<div id='helper-arrow'><--Drag me to resize!</div>");
-    $("#flags button:last-child").append( "<div id='flags-arrow'><-- Choose your flag</div>");
+    $("#flags button:last-child").after( "<div id='flags-arrow'><-- Choose your flag</div>");
     $("#flags-arrow").delay(2000).fadeIn(500);
     $("#flags button").click(function() {
         if (state == 0) {
