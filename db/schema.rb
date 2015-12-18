@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204220743) do
+ActiveRecord::Schema.define(version: 20151205014451) do
+
+
 
   create_table "uploads", force: :cascade do |t|
     t.string   "image_file_name"

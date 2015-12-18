@@ -12,5 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function () {
+    $("#flag").css({
+      "width":$("#img").width() - 2
+    });
+    $("#mix").change(function() {
+        $("#img img").css("opacity", this.value);
+        $("#flag img").css("opacity", (1 -this.value));
+    });
+    $("#fit").click(function() {
+        $("#flag").css({
+            "width":$("#img img").width()
+        });
+    });
+    $("#flag").draggable({ containment: $("#img img") });
+    $("#flag").resizable({ containment: $("#img img"), handles: 'ne, se, sw, nw', aspectRatio: 'true' });
+});

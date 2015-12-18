@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :uploads
+  resources :uploads do
+    member do
+      get 'overlay'
+    end
+  end
   root 'uploads#new'
 
   # The priority is based upon order of creation: first created -> highest priority.

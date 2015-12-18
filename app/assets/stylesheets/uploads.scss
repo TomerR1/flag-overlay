@@ -1,3 +1,29 @@
 // Place all the styles related to the uploads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#overlay {
+    position: relative;
+}
+
+#img {
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#flag {
+    position:absolute;
+    top:0;
+    left:0;
+    width:auto;
+}
+
+#img img, #flag img {
+    opacity:0.5;
+}
+
+#flag img {
+    width:100%;
+    height:100%;
+}
