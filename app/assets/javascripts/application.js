@@ -79,6 +79,7 @@ $(window).load(function () {
     $("#mix").change(function() {
         $("#img img").css("opacity", this.value);
         $("#flag img").css("opacity", (1 -this.value));
+        updatePreview();
     });
     $("#fit").click(function() {
         $("#flag").css({
