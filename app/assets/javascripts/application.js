@@ -76,7 +76,7 @@ $(window).load(function () {
     var state = 0;
     $("#flag").css({
       "width":$("#img img").width() - 4,
-      "height":$("#img img").height() - 4,
+      "height":$("#img img").height() - 4
     });
     $("#overlay").css({
       "width":$("#img img").width(),
