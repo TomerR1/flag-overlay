@@ -144,8 +144,6 @@ $(window).load(function () {
         updateFlags($("#searchFlag").val());
     });
     $("#flags img").click(function(e) {
-        selectFlag(e);
-        $(this).addClass("selected");
         updateFlag(e);
     });
     $("#searchFlag").focus();
