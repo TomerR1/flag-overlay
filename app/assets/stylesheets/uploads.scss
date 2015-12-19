@@ -35,13 +35,14 @@
 
 #helper-arrow {
     position: absolute;
-    right: -170px;
+    right: -160px;
     bottom: -18px;
-    padding: 10px;
+    padding: 6px;
     border: solid 1px black;
     background: #333;
     color: white;
     display:none;
+    border-radius: 5px;
 }
 
 #flags-arrow {
@@ -74,7 +75,7 @@
 .editor {
     visibility: hidden;
     padding-bottom: 50px;
-    margin-top: 30px;
+    padding-top: 30px;
 }
 
 #flags {

@@ -95,7 +95,8 @@ function selectFlag(e) {
 
 function showEditor() {
     $("#spinner").hide();
-    $("#helper-arrow").delay(2000).fadeIn(500);
+    $(".step2").append('<div id="editor-arrow">Step 2: Edit your picture  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" aria-hidden="true" style="display:none;"></span></div>');
+    $("#editor-arrow").delay(500).fadeIn(500);
     $(".editor, .preview").css({
         "display":"none",
         "visibility":"visible"
@@ -107,9 +108,8 @@ function showEditor() {
     $('html,body').animate({
         scrollTop: $(".editor").offset().top
     }, 1000).promise().done(function() {
-        console.log("heyy");
-        $(".step2").append('<div id="editor-arrow">Step 2: Edit your picture  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" aria-hidden="true" style="display:none;"></span></div>');
-        $("#editor-arrow").delay(500).fadeIn(500);
+        $("#flag").append( '<div id="helper-arrow"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>  Drag me to resize!</div>');
+        $("#helper-arrow").delay(2000).fadeIn(500);
         $("#flag").on("resizestop", function() {
             $("#editor-arrow .glyphicon-arrow-down").slideUp(200, function() {
                 $("#editor-arrow").css({"background-color":"green","border":"1px solid green"});
@@ -154,8 +154,6 @@ $(window).load(function () {
     $("#flag").on("resizestop", updatePreview);
     $("#flag").draggable({ containment: $("#img img") });
     $("#flag").resizable({ containment: $("#img img"), handles: 'ne, se, sw, nw' });
-    
-    $("#flag").append( "<div id='helper-arrow'><--Drag me to resize!</div>");
     $("#flags-arrow").delay(2000).fadeIn(500);
     updateFlags('');
     $("#searchFlag").keyup(function() {
