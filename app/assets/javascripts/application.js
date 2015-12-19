@@ -75,6 +75,7 @@ function updateFlags(s) {
         selectFlag(e);
         $(this).addClass("selected");
         updateFlag(e);
+        showEditor();
     });
 }
 
@@ -82,6 +83,19 @@ function selectFlag(e) {
     console.log(e.target.alt);
     $("#flags img").removeClass("selected");
     $("#flags img").css({"opacity":"0.3"});
+}
+
+function showEditor() {
+    if ($(".editor").css("visibility") == "hidden") {
+        $("#helper-arrow").delay(2000).fadeIn(500);
+        $("#flags-arrow").fadeOut(500);
+        $(".editor, .preview").css({
+            "display":"none",
+            "visibility":"visible"
+        });
+        $(".editor, .preview").show();
+        updatePreview();
+    }
 }
 
 $(document).ready(function() {
@@ -123,17 +137,7 @@ $(window).load(function () {
     $("#flags-arrow").delay(2000).fadeIn(500);
     updateFlags('');
     $("#flags img").click(function() {
-        if (state == 0) {
-            state = 1;
-            $("#helper-arrow").delay(2000).fadeIn(500);
-            $("#flags-arrow").fadeOut(500);
-            $(".editor, .preview").css({
-                "display":"none",
-                "visibility":"visible"
-            });
-            $(".editor, .preview").show();
-            updatePreview();
-        }
+        showEditor();
     });
     $("#searchFlag").keyup(function() {
         updateFlags($("#searchFlag").val());
