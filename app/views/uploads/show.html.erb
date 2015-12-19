@@ -5,21 +5,16 @@
                 <div id="flags" style="margin-top:20px;">
                     <button type="button" class="btn btn-default" id="flag1">FRENCH FLAG</button>
                     <button type="button" class="btn btn-default" id="flag2">US FLAG</button>
-                    <button type="button" class="btn btn-default" id="flag3">CANADA FLAG</button>
-                </div>
-                <div class="dropdown">
-                      <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Dropdown trigger
-                        <span class="caret"></span>
-                      </a>
-                    
-                      <ul class="dropdown-menu" aria-labelledby="dLabel">
-                        <% Dir.foreach(Rails.root.join('public/images/flags')) do |file| %>
+                    <button type="button" class="btn btn-default" id="flag3">CANADA FLAG</button><br>
+                    <div class="row">
+                        <% dir = Dir.entries(Rails.root.join('public/images/flags/pack')) %>
+                        <% dir.sort! %>
+                        <% for file in dir do %>
                             <% next if file == '.' or file == '..' %>
-                            <%= image_tag '/images/flags/'+file, :size => '70x40' %>
+                            <%= image_tag '/images/flags/pack/'+file, :size => '70x40', class:'flag-thumb' %>
                         <% end %>
-                      </ul>
                     </div>
+                </div>
             </div>
         </div>
     </div>
