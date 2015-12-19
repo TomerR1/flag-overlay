@@ -7,6 +7,19 @@
                     <button type="button" class="btn btn-default" id="flag2">US FLAG</button>
                     <button type="button" class="btn btn-default" id="flag3">CANADA FLAG</button>
                 </div>
+                <div class="dropdown">
+                      <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Dropdown trigger
+                        <span class="caret"></span>
+                      </a>
+                    
+                      <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <% Dir.foreach(Rails.root.join('public/images/flags')) do |file| %>
+                            <% next if file == '.' or file == '..' %>
+                            <%= image_tag '/images/flags/'+file, :size => '70x40' %>
+                        <% end %>
+                      </ul>
+                    </div>
             </div>
         </div>
     </div>
