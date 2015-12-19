@@ -59,6 +59,7 @@ function updatePreview() {
 
 function updateFlag(e) {
     $("#flag img").attr("src","/images/flags/pack/"+(e.target.alt)+".png");
+    $("#flag-text").html(e.target.alt);
     updatePreview();
 }
 

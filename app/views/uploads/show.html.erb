@@ -1,9 +1,20 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-4">
+            <div class="row">
+                File name: <%= @upload.image.original_filename %>
+            </div>
+            <div class="row">
+                Upload date: <%= @upload.created_at %>
+            </div>
+            <div class="row">
+                Flag chosen: <span id="flag-text">None</span>
+            </div>
+        </div>
+        <div class="col-md-8">
             <div id="controls">
+                <input type="text" class="form-control" id="searchFlag" style="margin:0px auto;width:80%;" placeholder="Search flag">
                 <div id="flags" style="margin-top:20px;">
-                    <input type="text" class="form-control" id="searchFlag" style="margin:0px auto;width:80%;" placeholder="Search flag">
                     <div class="row">
                         
                     </div>
