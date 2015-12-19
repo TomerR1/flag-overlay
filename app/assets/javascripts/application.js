@@ -82,7 +82,6 @@ function updateFlags(s) {
 function selectFlag(e) {
     console.log(e.target.alt);
     $("#flags img").removeClass("selected");
-    $("#flags img").css({"opacity":"0.3"});
 }
 
 function showEditor() {
