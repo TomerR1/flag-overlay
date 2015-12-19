@@ -78,4 +78,13 @@
 
 .flag-thumb {
     margin:4px;
+    transition: opacity 0.3s;
+}
+
+.flag-thumb.selected {
+    opacity: 1!important;
+}
+
+.flag-thumb:hover {
+    opacity: 1!important;
 }

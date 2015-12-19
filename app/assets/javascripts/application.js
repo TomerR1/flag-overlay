@@ -81,10 +81,24 @@ function updateFlags(s) {
     s = s.toLowerCase();
     for (var i=0;i<flagz.length;i++) {
         if (downcased[i].match(s)) {
-            $("#flags .row").append("<img class='flag-thumb' width='70' height='40' src='/images/flags/pack/"+flagz[i]+"'>");
+            $("#flags .row").append("<img class='flag-thumb' alt='"+flagz[i].replace('.png','')+"' width='70' height='40' src='/images/flags/pack/"+flagz[i]+"'>");
         }
     }
+    $("#flags img").click(function(e) {
+        selectFlag(e);
+        $(this).addClass("selected");
+    });
 }
+
+function selectFlag(e) {
+    console.log(e.target.alt);
+    $("#flags img").removeClass("selected");
+    $("#flags img").css({"opacity":"0.3"});
+}
+
+$(document).ready(function() {
+    $("#searchFlag").val('');
+});
 
 $(window).load(function () {
     var state = 0;
@@ -138,9 +152,10 @@ $(window).load(function () {
     $("#searchFlag").keyup(function() {
         updateFlags($("#searchFlag").val());
     });
-    $("#flags img").click(function(e){
-        console.log(e.target.alt);
+    $("#flags img").click(function(e) {
+        selectFlag(e);
+        $(this).addClass("selected");
     });
-   
     updatePreview();
+    updateFlags('');
 });
