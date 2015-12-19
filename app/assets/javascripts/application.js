@@ -62,16 +62,12 @@ function updateFlag(e) {
     updatePreview();
 }
 
-function searchFlag(s) {
-    console.log(flagz);
-}
-
 function updateFlags(s) {
     $("#flags .row").empty();
     s = s.toLowerCase();
     for (var i=0;i<flagz.length;i++) {
         if (downcased[i].match(s)) {
-            $("#flags .row").append("<img class='flag-thumb' alt='"+flagz[i].replace('.png','')+"' width='70' height='40' src='/images/flags/pack/"+flagz[i]+"'>");
+            $("#flags .row").append("<img class='flag-thumb' alt='"+flagz[i].replace('.png','')+"' width='80' height='39' src='/images/flags/thumb/"+flagz[i]+"'>");
         }
     }
     $("#flags img").click(function(e) {
