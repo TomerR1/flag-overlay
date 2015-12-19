@@ -102,6 +102,9 @@ function showEditor() {
     });
     $(".editor, .preview").show();
     updatePreview();
+    $('html,body').animate({
+        scrollTop: $(".editor").offset().top
+    }, 1000);
 }
 
 $(document).ready(function() {
