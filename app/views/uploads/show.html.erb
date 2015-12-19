@@ -6,9 +6,11 @@
                     <button type="button" class="btn btn-default" id="flag1">FRENCH FLAG</button>
                     <button type="button" class="btn btn-default" id="flag2">US FLAG</button>
                     <button type="button" class="btn btn-default" id="flag3">CANADA FLAG</button><br>
+                    <input type="text" class="form-control" id="searchFlag" style="margin:0px auto;width:80%;" placeholder="Search flag">
                     <div class="row">
                         <% dir = Dir.entries(Rails.root.join('public/images/flags/pack')) %>
                         <% dir.sort! %>
+                        <% downcased = dir.map(&:downcase) %>
                         <% for file in dir do %>
                             <% next if file == '.' or file == '..' %>
                             <%= image_tag '/images/flags/pack/'+file, :size => '70x40', class:'flag-thumb' %>

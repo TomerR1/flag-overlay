@@ -72,6 +72,20 @@ function updateFlag(event) {
     updatePreview();
 }
 
+function searchFlag(s) {
+    console.log(flagz);
+}
+
+function updateFlags(s) {
+    $("#flags .row").empty();
+    s = s.toLowerCase();
+    for (var i=0;i<flagz.length;i++) {
+        if (downcased[i].match(s)) {
+            $("#flags .row").append("<img class='flag-thumb' width='70' height='40' src='/images/flags/pack/"+flagz[i]+"'>");
+        }
+    }
+}
+
 $(window).load(function () {
     var state = 0;
     $("#flag").css({
@@ -120,6 +134,9 @@ $(window).load(function () {
             $(".editor, .preview").show();
             updatePreview();
         }
+    });
+    $("#searchFlag").keypress(function() {
+        updateFlags($("#searchFlag").val());
     });
    
     updatePreview();
