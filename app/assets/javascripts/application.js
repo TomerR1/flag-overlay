@@ -135,7 +135,7 @@ $(window).load(function () {
             updatePreview();
         }
     });
-    $("#searchFlag").keypress(function() {
+    $("#searchFlag").keyup(function() {
         updateFlags($("#searchFlag").val());
     });
    
