@@ -76,9 +76,9 @@ function updateFlags(s) {
         $(this).addClass("selected");
         updateFlag(e);
         if ($(".editor").css("visibility") == "hidden") {
-            $(".glyphicon-arrow-down").slideUp(200, function() {
+            $("#flags-arrow .glyphicon-arrow-down").slideUp(200, function() {
                 $("#flags-arrow").css({"background-color":"green","border":"1px solid green"});
-                $(".glyphicon-ok").slideDown(500);
+                $("#flags-arrow .glyphicon-ok").slideDown(500);
             });
             $("#top-box").after(
                 '<div class="container"><div class="row"><div class="col-md-12" id="spinner"><img src="/images/loading.svg/"/></div></div></div>'
@@ -101,14 +101,28 @@ function showEditor() {
         "visibility":"visible"
     });
     $(".editor, .preview").show();
+    $("#img img").css("opacity", $("#mix").val());
+    $("#flag img").css("opacity", 1 - $("#mix").val());
     updatePreview();
     $('html,body').animate({
         scrollTop: $(".editor").offset().top
-    }, 1000);
+    }, 1000).promise().done(function() {
+        console.log("heyy");
+        $(".step2").append('<div id="editor-arrow">Step 2: Edit your picture  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" aria-hidden="true" style="display:none;"></span></div>');
+        $("#editor-arrow").delay(500).fadeIn(500);
+        $("#flag").on("resizestop", function() {
+            $("#editor-arrow .glyphicon-arrow-down").slideUp(200, function() {
+                $("#editor-arrow").css({"background-color":"green","border":"1px solid green"});
+                $("#editor-arrow .glyphicon-ok").slideDown(500);
+                $("#helper-arrow").delay(1000).fadeOut();
+            });
+        });
+    });
 }
 
 $(document).ready(function() {
     $("#searchFlag").val('');
+    $("#mix").val(0.6);
 });
 
 $(window).load(function () {

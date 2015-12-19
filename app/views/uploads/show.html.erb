@@ -45,12 +45,34 @@
 </div>
 <div class="container editor">
     <div class="row">
-        <div class="col-md-12">
-            <h3 style="text-align:center;">Edit your picture:</h3>
+        <div class="col-md-4">
+            <h5 style="text-align:center;">Change settings:</h3>
             <div id="controls">
-                <input type="range" min="0" max="1" step=".01" value="0.5" id="mix" style="width:30%;margin:0px auto;">
-                <button type="button" class="btn btn-default" id="fit" style="margin-top:20px;">Fit to picture</button>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <input type="range" min="0" max="1" step=".01" value="0.5" id="mix" style="width:100%;margin:0px auto;">
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-default" id="fit">Fit to picture</button>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="sda">
+                        Ad Space
+                    </div>
+                </div>
+                <div class="col-md-4 step2">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div id="overlay" style="margin:0px auto;">
                     <div id="img"><%= image_tag @upload.image.url %></div>
                     <div id="flag"><%= image_tag '' %></div>
