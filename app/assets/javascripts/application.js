@@ -138,6 +138,9 @@ $(window).load(function () {
     $("#searchFlag").keyup(function() {
         updateFlags($("#searchFlag").val());
     });
+    $("#flags img").click(function(e){
+        console.log(e.target.alt);
+    });
    
     updatePreview();
 });
