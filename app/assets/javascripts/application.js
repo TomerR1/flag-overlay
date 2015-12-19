@@ -57,18 +57,8 @@ function updatePreview() {
         });
     };
 
-function updateFlag(event) {
-    switch (event.data.param) {
-        case 1:
-            $("#flag img").attr("src","/images/flags/fr.png");
-            break;
-        case 2:
-            $("#flag img").attr("src","/images/flags/us.png")
-            break;
-        case 3:
-            $("#flag img").attr("src","/images/flags/cn.png")
-            break;
-    }
+function updateFlag(e) {
+    $("#flag img").attr("src","/images/flags/pack/"+(e.target.alt)+".png");
     updatePreview();
 }
 
@@ -87,6 +77,7 @@ function updateFlags(s) {
     $("#flags img").click(function(e) {
         selectFlag(e);
         $(this).addClass("selected");
+        updateFlag(e);
     });
 }
 
@@ -129,14 +120,12 @@ $(window).load(function () {
     $("#flag").on("resizestop", updatePreview);
     $("#flag").draggable({ containment: $("#img img") });
     $("#flag").resizable({ containment: $("#img img"), handles: 'ne, se, sw, nw' });
-    $("#flag1").bind('click', { param: 1 }, updateFlag);
-    $("#flag2").bind('click', { param: 2 }, updateFlag);
-    $("#flag3").bind('click', { param: 3 }, updateFlag);
     
     $("#flag").append( "<div id='helper-arrow'><--Drag me to resize!</div>");
     $("#flags button:last-child").after( "<div id='flags-arrow'><-- Choose your flag</div>");
     $("#flags-arrow").delay(2000).fadeIn(500);
-    $("#flags button").click(function() {
+    updateFlags('');
+    $("#flags img").click(function() {
         if (state == 0) {
             state = 1;
             $("#helper-arrow").delay(2000).fadeIn(500);
@@ -155,7 +144,7 @@ $(window).load(function () {
     $("#flags img").click(function(e) {
         selectFlag(e);
         $(this).addClass("selected");
+        updateFlag(e);
     });
-    updatePreview();
-    updateFlags('');
+    $("#searchFlag").focus();
 });
