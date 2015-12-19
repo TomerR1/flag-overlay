@@ -8,16 +8,7 @@
 </head>
 <body>
 <script type="text/javascript" charset="utf-8">
-  var flagz = <%= raw (Dir.entries(Rails.root.join('public/images/flags/pack'))).sort!.as_json %>;
-  flagz = flagz.slice(2);
-  flagz.splice(0, 0, flagz.splice(flagz.indexOf("United_States_of_America.png"), 1)[0]);
-  flagz.splice(1, 0, flagz.splice(flagz.indexOf("United_Kingdom.png"), 1)[0]);
-  flagz.splice(2, 0, flagz.splice(flagz.indexOf("France.png"), 1)[0]);
-  flagz.splice(3, 0, flagz.splice(flagz.indexOf("Germany.png"), 1)[0]);
-  flagz.splice(4, 0, flagz.splice(flagz.indexOf("Spain.png"), 1)[0]);
-  flagz.splice(5, 0, flagz.splice(flagz.indexOf("China.png"), 1)[0]);
-  flagz.splice(6, 0, flagz.splice(flagz.indexOf("Russian_Federation.png"), 1)[0]);
-  var downcased=flagz.join('|').toLowerCase().split('|');
+ 
 </script>
 <div class="container">
   <div class="row">
