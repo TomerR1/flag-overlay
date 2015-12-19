@@ -76,6 +76,10 @@ function updateFlags(s) {
         $(this).addClass("selected");
         updateFlag(e);
         if ($(".editor").css("visibility") == "hidden") {
+            $(".glyphicon-arrow-down").slideUp(200, function() {
+                $("#flags-arrow").css({"background-color":"green","border":"1px solid green"});
+                $(".glyphicon-ok").slideDown(500);
+            });
             $("#top-box").after(
                 '<div class="container"><div class="row"><div class="col-md-12" id="spinner"><img src="/images/loading.svg/"/></div></div></div>'
                 );
@@ -92,16 +96,12 @@ function selectFlag(e) {
 function showEditor() {
     $("#spinner").hide();
     $("#helper-arrow").delay(2000).fadeIn(500);
-    $("#flags-arrow").css({"background-color":"green","border":"1px solid green"});
     $(".editor, .preview").css({
         "display":"none",
         "visibility":"visible"
     });
     $(".editor, .preview").show();
     updatePreview();
-    $(".glyphicon-arrow-down").delay(2000).slideUp(1500, function() {
-        $(".glyphicon-ok").slideDown(1500);
-    });
 }
 
 $(document).ready(function() {
