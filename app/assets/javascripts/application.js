@@ -51,7 +51,7 @@ function updatePreview() {
             }
         });
         $("#flag").css({
-            "border":"solid 2px black",
+            "border":"dashed 2px black",
             "width":$("#flag").width() - 4,
             "height":$("#flag").height() - 4
         });
