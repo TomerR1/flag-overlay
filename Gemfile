@@ -32,6 +32,9 @@ gem 'jquery-ui-rails'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# Use touch punch to make jquery UI work in touch devices
+gem 'touchpunch-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
