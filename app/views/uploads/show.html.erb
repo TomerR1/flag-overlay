@@ -74,7 +74,7 @@
     <div class="row">
         <div class="col-md-12">
             <div id="overlay" style="margin:0px auto;">
-                    <div id="img"><%= image_tag @upload.image.url %></div>
+                    <div id="img"><%= image_tag @upload.image.url(:resized) %></div>
                     <div id="flag"><%= image_tag '' %></div>
             </div>
         </div>
