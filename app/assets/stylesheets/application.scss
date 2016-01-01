@@ -18,8 +18,31 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {
+    background-color: white;
+    border-bottom: 5px solid rgba(120, 120, 120, 1);
+}
 
+.nav {
+    text-align: center;
+    margin: 10px 0px 10px;
+}
 
-.jumbotron a {
+.nav a {
     text-decoration: none;
+}
+
+body {
+    background: #005C97; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #005C97 , #363795); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #005C97 , #363795); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    font-family: 'Open Sans', sans-serif;
+}
+
+#top-box, .editor, .preview, .upload {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }

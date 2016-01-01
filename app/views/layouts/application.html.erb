@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Flag Overlay</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,10 +12,10 @@
 <script type="text/javascript" charset="utf-8">
  
 </script>
-<div class="container">
+<div class="container-fluid navbar">
   <div class="row">
-    <div class="col-md-12" style="text-align:center;">
-      <div class="jumbotron">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="nav">
         <h1><%= link_to "Flag Overlay", root_path %><span style="font-size:15px;vertical-align:bottom;">beta</span></h1>
       </div>
     </div>
