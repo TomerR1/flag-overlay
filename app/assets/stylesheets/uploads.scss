@@ -111,8 +111,17 @@
     text-align: center;
 }
 
+#info {
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+}
+
 #info .row {
     height:94px;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
 }
 
 

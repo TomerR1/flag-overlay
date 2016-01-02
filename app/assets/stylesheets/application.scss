@@ -19,13 +19,11 @@
 @import "bootstrap";
 
 .navbar {
-    background-color: white;
-    border-bottom: 5px solid rgba(120, 120, 120, 1);
+    background-color: #2B2B2B;
 }
 
 .nav {
-    text-align: center;
-    margin: 10px 0px 10px;
+    text-align: left;
 }
 
 .nav a {
@@ -33,16 +31,20 @@
 }
 
 body {
-    background: #005C97; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #005C97 , #363795); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #005C97 , #363795); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    //ackground: #005C97; /* fallback for old browsers */
+    //background: -webkit-linear-gradient(to left, #005C97 , #363795); /* Chrome 10-25, Safari 5.1-6 */
+    //background: linear-gradient(to left, #005C97 , #363795); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     font-family: 'Open Sans', sans-serif;
+    
+    background-color: #121211 !important;
+    color: white;
 }
 
 #top-box, .editor, .preview, .upload {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 25px;
+    background-color: rgba(43,43,43,0.7);
     border-radius: 10px;
     margin-bottom: 20px;
+    border-bottom: 1px solid rgba(120, 120, 120, 0.4);
+    box-shadow: 0px 5px 15px 10px rgba(35, 35, 35, 0.5);
 }

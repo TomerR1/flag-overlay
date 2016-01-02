@@ -13,13 +13,13 @@
     <div class="row">
         <div class="col-md-4" id="info">
             <div class="row">
-                File name: <%= @upload.image.original_filename %> <%= image_tag @upload.image.url(:thumb) %>
+                FILE NAME: <%= @upload.image.original_filename %> <%= image_tag @upload.image.url(:thumb) %>
             </div>
             <div class="row">
-                Upload date: <%= @upload.created_at %>
+                UPLOADED AT: <%= @upload.created_at %>
             </div>
-            <div class="row">
-                Flag chosen: <span id="flag-text">None</span>
+            <div class="row" style="border-bottom:solid 1px black;">
+                FLAG CHOSEN: <span id="flag-text">None</span>
             </div>
         </div>
         <div class="col-md-8">
